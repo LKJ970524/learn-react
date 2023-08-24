@@ -23,7 +23,7 @@ function Products() {
         <h1 className="text-indigo-950 text-2xl mb-5">Products</h1>
         <ul className='grid grid-cols-3'>
           {data.items.map((item) => (
-            <li key={item.id} className='justify-self-center'>
+            <li key={item.id} className='justify-self-center pt-5'>
               <Link to={`/product/edit/${item.id}`}>
                 <figure>
                   <img
