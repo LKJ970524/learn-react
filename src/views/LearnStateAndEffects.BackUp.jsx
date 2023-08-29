@@ -59,7 +59,7 @@ function LearnStateAndEffects() {
       </div>
     );
   }
-dddsscgkkggtbnkunhgggg
+
   // 성공적으로 데이터를 가져온 경우 화면
   return (
     <div className="m-10 flex flex-col gap-2 items-start">

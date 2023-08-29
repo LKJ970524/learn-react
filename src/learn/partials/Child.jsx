@@ -12,3 +12,4 @@ export default function Child({ color, onChangeColor }) {
     </div>
   );
 }
+

@@ -25,3 +25,5 @@ export default function ProductItem({ item }) {
 ProductItem.propTypes = {
   item: ProductType.isRequired
 }
+
+

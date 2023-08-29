@@ -1,19 +1,36 @@
 import { create } from 'zustand';
+import { devtools } from 'zustand/middleware';
 
-// store (define state & action)
-const listStore = () => {
-  // return store's state & actions
-  return {
-    // state
+export const useListStore = create(
+  devtools((set) => ({
     list: [
       {
         id: crypto.randomUUID(),
-        title: 'Zustand는 츄~스탄트로 발음합니다.',
+        title: 'Zustand는 츄~슈탄트로 발음합니다.',
       },
     ],
-    // actions
-  };
-};
 
-// hook (bind component) ← store (define state & action)
-export const useListStore = create(listStore);
+    addItem: (newItemTitle) =>
+      set(
+        (state) => ({
+          list: [
+            ...state.list,
+            {
+              id: crypto.randomUUID(),
+              title: newItemTitle,
+            },
+          ],
+        }),
+        false,
+        'list/addItem'
+      ),
+    deleteItem: (deleteId) =>
+      set(
+        (state) => ({
+          list: state.list.filter((item) => item.id !== deleteId),
+        }),
+        false,
+        'list/removeItem'
+      ),
+  }))
+);
